@@ -1,6 +1,9 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:gupshup_corner/Screens/Home/plan.dart';
+
+import 'todos_list_page.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -54,19 +57,8 @@ class Home extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(30)),
                               child: TextButton.icon(
                                 onPressed: () {
-                                  Get.bottomSheet(
-                                    Center(
-                                      child: SingleChildScrollView(
-                                        child: Container(
-                                          color: Colors.white,
-                                          height: 350,
-                                          width:
-                                              MediaQuery.of(context).size.width,
-                                          child: Center(
-                                              child: Text('Add More Plans')),
-                                        ),
-                                      ),
-                                    ),
+                                  Get.to(
+                                    Plan(),
                                   );
                                 },
                                 icon: Icon(Icons.add),
@@ -138,20 +130,7 @@ class Home extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(30)),
                             child: TextButton.icon(
                               onPressed: () {
-                                Get.bottomSheet(
-                                  Center(
-                                    child: SingleChildScrollView(
-                                      child: Container(
-                                        color: Colors.white,
-                                        height: 400,
-                                        width:
-                                            MediaQuery.of(context).size.width,
-                                        child: Center(
-                                            child: Text('Choose a plan')),
-                                      ),
-                                    ),
-                                  ),
-                                );
+                                Get.to(ToDoList());
                               },
                               icon: Icon(Icons.add),
                               label: Text(

@@ -4,16 +4,19 @@ class UserModel {
   String? fullName;
   String? userName;
 
-  UserModel({this.uid, this.email, this.fullName, this.userName});
-
+  UserModel({
+    this.uid,
+    this.email,
+    this.fullName,
+    this.userName,
+  });
 
   factory UserModel.fromMap(map) {
     return UserModel(
-      uid: map['uid'],
-      email: map['email'],
-      fullName: map['fullName'],
-      userName: map['userName'],
-    );
+        uid: map['uid'],
+        email: map['email'],
+        fullName: map['fullName'],
+        userName: map['userName']);
   }
 
 //sending

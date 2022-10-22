@@ -101,7 +101,7 @@ class _Sign_UpState extends State<Sign_Up> {
     );
     //--------------------------------Password
     final passwordfeild = TextFormField(
-      autofocus: true,
+      autofocus: false,
       obscureText: true,
       controller: passwordController,
       onSaved: (value) {
@@ -149,7 +149,7 @@ class _Sign_UpState extends State<Sign_Up> {
     final loginbutton = Material(
       elevation: 5,
       borderRadius: BorderRadius.circular(10),
-      color: const Color.fromRGBO(220, 34, 34, 1),
+      color: Colors.red[900],
       child: MaterialButton(
         padding: const EdgeInsets.fromLTRB(40, 15, 40, 15),
         minWidth: MediaQuery.of(context).size.width,
@@ -216,14 +216,14 @@ class _Sign_UpState extends State<Sign_Up> {
                       children: [
                         const Text('Already have an account?'),
                         GestureDetector(
-                          onTap: () {
-                            Get.to(Sign_In(),);
-                          },
+                          onTap: () => Get.to(
+                            Sign_In(),
+                          ),
                           child: const Text(
                             " Login",
                             style: TextStyle(
                                 fontWeight: FontWeight.w600,
-                                color: Color.fromRGBO(220, 34, 34, 1),
+                                color: Colors.green,
                                 fontSize: 15),
                           ),
                         ),

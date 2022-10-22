@@ -3,8 +3,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:gupshup_corner/Screens/Events/events.dart';
-import 'ChatBox/chat.dart';
+import 'package:gupshup_corner/Screens/SignIn/sign_in.dart';
+import 'ChatBox/chatbox.dart';
 import 'Home/home.dart';
 import 'Location/locator.dart';
 import 'Me/profile.dart';
@@ -27,7 +29,7 @@ class _BottomBarState extends State<BottomBar> {
 
   static final List<Widget> _widgetOptions = <Widget>[
     Home(),
-    Chat(),
+    ChatBox(),
     Events(),
     Locator(),
     Profile(),
@@ -36,10 +38,7 @@ class _BottomBarState extends State<BottomBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _widgetOptions.elementAt(_selectedIndex),
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
         iconTheme: IconThemeData(
           color: Colors.black,
         ),
@@ -53,7 +52,7 @@ class _BottomBarState extends State<BottomBar> {
         actions: [
           IconButton(
             onPressed: () {
-              FirebaseAuth.instance.signOut();
+              showConfirmLogout();
             },
             icon: Icon(
               Icons.logout,
@@ -61,7 +60,21 @@ class _BottomBarState extends State<BottomBar> {
             ),
           ),
         ],
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [
+                Colors.green,
+                // Colors.red,
+                Colors.lightBlue,
+              ],
+            ),
+          ),
+        ),
       ),
+      body: _widgetOptions.elementAt(_selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
@@ -86,12 +99,12 @@ class _BottomBarState extends State<BottomBar> {
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.black,
+        selectedItemColor: Colors.blue,
         unselectedIconTheme: IconThemeData(size: 28),
-        unselectedItemColor: Colors.grey,
+        unselectedItemColor: Colors.black,
         unselectedFontSize: 16,
-        selectedFontSize: 20,
-        selectedIconTheme: IconThemeData(size: 30, color: Colors.black),
+        selectedFontSize: 18,
+        selectedIconTheme: IconThemeData(size: 30, color: Colors.blue),
         onTap: _onItemTapped,
       ),
     );
@@ -138,7 +151,7 @@ class _BottomBarState extends State<BottomBar> {
         actions: [
           CupertinoActionSheetAction(
             onPressed: () {
-              FirebaseAuth.instance.signOut();
+              Get.to(Sign_In());
             },
             child: Text(
               "Sign Out",
@@ -149,7 +162,8 @@ class _BottomBarState extends State<BottomBar> {
         cancelButton: CupertinoActionSheetAction(
           child: Text("Cancel"),
           onPressed: () {
-            Navigator.of(context).pop();
+            FirebaseAuth.instance.signOut();
+            // Navigator.of(context).pop();
           },
         ),
       ),

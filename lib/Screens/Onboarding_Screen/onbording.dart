@@ -56,7 +56,7 @@ class _OnbordingState extends State<Onbording> {
                         style: const TextStyle(
                           fontSize: 35,
                           fontWeight: FontWeight.bold,
-                          color: Color.fromRGBO(220, 34, 34, 1),
+                          color: Colors.green,
                         ),
                       ),
                       const SizedBox(height: 20),
@@ -99,7 +99,7 @@ class _OnbordingState extends State<Onbording> {
                   curve: Curves.bounceIn,
                 );
               },
-              color: Theme.of(context).primaryColor,
+              color: Colors.red[900],
               textColor: Colors.white,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10),

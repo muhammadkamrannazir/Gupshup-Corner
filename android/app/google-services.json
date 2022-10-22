@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1067287329233",
+    "project_id": "gupshup-corner-ea1b7",
+    "storage_bucket": "gupshup-corner-ea1b7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1067287329233:android:767c36952bd6680714c8f0",
+        "android_client_info": {
+          "package_name": "com.example.gupshup_corner"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1067287329233-rv2b4jcti7b3jq6td9o5g02rd06n5cme.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdJhf83rNXtWsoGWTKCPdpGUWeHNwjGBw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1067287329233-rv2b4jcti7b3jq6td9o5g02rd06n5cme.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

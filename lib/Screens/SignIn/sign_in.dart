@@ -78,7 +78,7 @@ class _Sign_InState extends State<Sign_In> {
     final loginbutton = Material(
       elevation: 5,
       borderRadius: BorderRadius.circular(10),
-      color: const Color.fromRGBO(220, 34, 34, 1),
+      color: Colors.red[900],
       child: MaterialButton(
         splashColor: const Color.fromARGB(255, 121, 30, 30),
         padding: const EdgeInsets.fromLTRB(60, 15, 60, 15),
@@ -146,7 +146,7 @@ class _Sign_InState extends State<Sign_In> {
                             " Sign up",
                             style: TextStyle(
                                 fontWeight: FontWeight.w600,
-                                color: Color.fromRGBO(220, 34, 34, 1),
+                                color: Colors.green,
                                 fontSize: 15),
                           ),
                         ),
